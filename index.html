@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Obfuscator</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Text Obfuscator</h1>
+        <p class="subtitle">Transform your text into unreadable formats using various encoding techniques</p>
+        
+        <div class="concept-section">
+            <h2>🧠 What is Text Obfuscation?</h2>
+            <p>Text obfuscation is the practice of making text difficult to read or understand while preserving its original meaning. It's commonly used for privacy, security, artistic expression, or bypassing text filters.</p>
+            
+            <div class="method-grid">
+                <div class="method-card">
+                    <h3>🔤 Unicode Look-alikes</h3>
+                    <p>Replaces standard characters with visually similar Unicode characters from different alphabets (Cyrillic, Greek, etc.)</p>
+                </div>
+                <div class="method-card">
+                    <h3>🎮 Leet Speak</h3>
+                    <p>Substitutes letters with numbers and symbols that resemble them (e.g., 3 for E, 4 for A, 7 for T)</p>
+                </div>
+                <div class="method-card">
+                    <h3>🔣 Symbol Replacement</h3>
+                    <p>Converts text into various symbols, special characters, or creates pattern-based encodings</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-section">
+            <label for="inputText">Enter your text to obfuscate:</label>
+            <textarea id="inputText" class="input-area" placeholder="Type your text here..."></textarea>
+            
+            <div class="intensity-control">
+                <label>Intensity:</label>
+                <input type="range" id="intensitySlider" class="intensity-slider" min="1" max="3" value="2">
+                <span id="intensityValue" style="color: #ffd700; font-weight: bold;">Medium</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="obfuscateAll()">🚀 Obfuscate All</button>
+            <button class="btn btn-secondary" onclick="clearAll()">🧹 Clear All</button>
+            <button class="btn btn-warning" onclick="copyAllResults()">📋 Copy All Results</button>
+        </div>
+
+        <div class="output-section">
+            <div class="output-card">
+                <h3>🔤 Unicode Look-alikes</h3>
+                <div class="output-area" id="unicodeOutput">
+                    <button class="copy-btn" onclick="copyToClipboard('unicodeOutput')">Copy</button>
+                    Your Unicode obfuscated text will appear here...
+                </div>
+            </div>
+
+            <div class="output-card">
+                <h3>🎮 Leet Speak</h3>
+                <div class="output-area" id="leetOutput">
+                    <button class="copy-btn" onclick="copyToClipboard('leetOutput')">Copy</button>
+                    Your leet speak text will appear here...
+                </div>
+            </div>
+
+            <div class="output-card">
+                <h3>🔣 Symbol Cipher</h3>
+                <div class="output-area" id="symbolOutput">
+                    <button class="copy-btn" onclick="copyToClipboard('symbolOutput')">Copy</button>
+                    Your symbol encoded text will appear here...
+                </div>
+            </div>
+
+            <div class="output-card">
+                <h3>🌟 Fancy Unicode</h3>
+                <div class="output-area" id="fancyOutput">
+                    <button class="copy-btn" onclick="copyToClipboard('fancyOutput')">Copy</button>
+                    Your fancy Unicode text will appear here...
+                </div>
+            </div>
+
+            <div class="output-card">
+                <h3>🔄 Reverse Cipher</h3>
+                <div class="output-area" id="reverseOutput">
+                    <button class="copy-btn" onclick="copyToClipboard('reverseOutput')">Copy</button>
+                    Your reverse cipher text will appear here...
+                </div>
+            </div>
+
+            <div class="output-card">
+                <h3>📊 Binary Code</h3>
+                <div class="output-area" id="binaryOutput">
+                    <button class="copy-btn" onclick="copyToClipboard('binaryOutput')">Copy</button>
+                    Your binary encoded text will appear here...
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="charCount">0</span>
+                <span class="stat-label">Characters</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="wordCount">0</span>
+                <span class="stat-label">Words</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="methodCount">0</span>
+                <span class="stat-label">Methods Applied</span>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
